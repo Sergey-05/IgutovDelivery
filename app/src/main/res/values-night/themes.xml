@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.IgutovDelivery" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:windowBackground">@drawable/background_splash_dark</item>
+    </style>
+
+
+    <style name="MainTheme" parent="Theme.AppCompat">
+
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:background">#000D1D</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+    </style>
+
+
+
+</resources>

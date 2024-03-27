@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">IgutovDelivery</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="signUp">Sign Up</string>
+    <string name="sign_in">Sign in</string>
+
+
+    <string name="onTitle1">Quick Delivery At Your Doorstep</string>
+    <string name="onTitle2">Flexible Payment</string>
+    <string name="onTitle3">Real-time Tracking</string>
+    <string name="onDesc1">Enjoy quick pick-up and delivery to your destination</string>
+    <string name="onDesc2">Different modes of payment either before and after delivery without stress</string>
+    <string name="onDesc3">Track your packages/items from the comfort of your home till final destination</string>
+
+
+    <string name="already">Already have an account?</string>
+
+</resources>
