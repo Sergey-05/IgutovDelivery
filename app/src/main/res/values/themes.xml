@@ -14,7 +14,7 @@
         <item name="android:windowBackground">@drawable/background_splash</item>
     </style>
 
-    <style name="MainTheme" parent="Theme.AppCompat">
+    <style name="MainTheme" parent="Theme.AppCompat.NoActionBar">
 
         <item name="android:colorPrimary">@color/primary</item>
         <item name="android:background">@color/white</item>
@@ -23,4 +23,17 @@
 
     </style>
 
+    <style name="NavTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:textColorSecondary">@color/gray_color_dark</item>
+    </style>
+    
+<!--    <style name="SwitchTheme" parent="Theme.AppCompat">-->
+
+<!--        <item name="trackColorActive">@color/primary</item>-->
+<!--        <item name="trackColorInactive">@color/gray_color_dark</item>-->
+<!--        <item name="trackHeight">20dp</item>-->
+<!--        <item name="thumbIconSize">18dp</item>-->
+
+<!--    </style>-->
 </resources>

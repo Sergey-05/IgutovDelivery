@@ -59,9 +59,19 @@ public class NewPasswordActivity extends AppCompatActivity {
         logInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startLogIn = new Intent(NewPasswordActivity.this, SignInActivity.class);
-                startActivity(startLogIn);
-                finish();
+                String pswTxt = pswField.getText().toString();
+                String confirmPswTxt = confirmPswField.getText().toString();
+                if (!pswTxt.equals(confirmPswTxt)) {
+                    pswField.setBackgroundResource(R.drawable.edittext_border_err);
+                    confirmPswField.setBackgroundResource(R.drawable.edittext_border_err);
+                    pswField.setTextColor(getColor(R.color.error_color));
+                    confirmPswField.setTextColor(getColor(R.color.error_color));
+                }else {
+                    Intent startLogIn = new Intent(NewPasswordActivity.this, SignInActivity.class);
+                    startActivity(startLogIn);
+                    finish();
+                }
+
             }
         });
     }
