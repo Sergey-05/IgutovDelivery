@@ -3,14 +3,402 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment"
+    android:padding="20dp">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Home"
-        android:gravity="center"
-        android:textColor="@color/primary"
-        style="@style/heading_black_96"/>
+        android:id="@+id/home_container">
+
+
+        <RelativeLayout
+            android:id="@+id/search_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:inputType="text"
+                android:hint="Search services"
+                android:padding="10dp"
+
+                style="@style/body_regular_12"
+                android:textColor="@color/gray_color_dark"
+                android:textColorHint="@color/gray_color_dark"
+                android:id="@+id/home_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_field"/>
+
+
+            <ImageView
+                android:padding="10dp"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/search"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@drawable/primary_button_back"
+            android:layout_marginTop="20dp"
+            android:id="@+id/head_home_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+
+
+            <ImageView
+                android:background="@android:color/transparent"
+                android:id="@+id/profileAvatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/avatar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <RelativeLayout
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/profileAvatar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentStart="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profileName"
+                    android:text="Hello Name"
+                    style="@style/heading_medium_24"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:background="@android:color/transparent"
+                    android:layout_below="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/body_regular_12"
+                        android:background="@android:color/transparent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="We trust you are having a great time"
+                        android:textColor="@color/gray_color_light"/>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:background="@android:color/transparent"
+                android:id="@+id/toggle_hide_balance"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/notific_home"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <RelativeLayout
+            app:layout_constraintTop_toBottomOf="@+id/head_home_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/special_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                style="@style/body_medium_14"
+                android:text="Special for you"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                />
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:background="@android:color/transparent"
+                android:src="@drawable/arrow_next"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/home_items"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/special_home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_alignParentStart="true"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/item1"/>
+
+            <ImageView
+                android:layout_alignParentEnd="true"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/item2"/>
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:id="@+id/txtHome"
+            app:layout_constraintTop_toBottomOf="@+id/home_items"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What would you like to do"
+            android:textColor="@color/primary"
+            style="@style/body_medium_14"/>
+
+
+        <RelativeLayout
+            app:layout_constraintTop_toBottomOf="@id/txtHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/first_items"
+                android:layout_alignParentEnd="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/customerBtn"
+                    android:clickable="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:padding="8dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/item_back">
+
+                    <ImageView
+                        android:background="@android:color/transparent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/customer"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:background="@android:color/transparent"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@drawable/title_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/item_title"
+                        android:text="Customer Care"/>
+                    <TextView
+                        android:background="@android:color/transparent"
+                        android:textSize="7.45sp"
+                        android:lineHeight="9.94sp"
+                        android:fontFamily="@font/roboto_regular_400"
+                        android:textColor="@drawable/desc_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/item_desc"
+                        android:text="Our customer care service line is available from 8 -9pm week days and 9 - 5 weekends - tap to call us today"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/packageBtn"
+                    android:clickable="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:padding="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/item_back">
+
+                    <ImageView
+                        android:background="@android:color/transparent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/resource_package"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:background="@android:color/transparent"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@drawable/title_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/item2_title"
+                        android:text="Send a package"/>
+                    <TextView
+                        android:background="@android:color/transparent"
+                        android:textSize="7.45sp"
+                        android:lineHeight="9.94sp"
+                        android:fontFamily="@font/roboto_regular_400"
+                        android:textColor="@drawable/desc_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/item2_desc"
+                        android:text="Request for a driver to pick up or deliver your package for you"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_below="@+id/first_items"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/walletBtn"
+                        android:clickable="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:padding="8dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/item_back">
+
+                        <ImageView
+                            android:background="@android:color/transparent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/wallet_icon"
+                            android:layout_marginBottom="10dp"/>
+
+                        <TextView
+                            android:background="@android:color/transparent"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="@drawable/title_selector"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/item3_title"
+                            android:text="Fund your wallet"/>
+                        <TextView
+                            android:background="@android:color/transparent"
+                            android:textSize="7.45sp"
+                            android:lineHeight="9.94sp"
+                            android:fontFamily="@font/roboto_regular_400"
+                            android:textColor="@drawable/desc_selector"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/item3_desc"
+                            android:text="To fund your wallet is as easy as ABC, make use of our fast technology and top-up your wallet today"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/chatsBtn"
+                        android:clickable="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:padding="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/item_back">
+
+                        <ImageView
+                            android:background="@android:color/transparent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/chats"
+                            android:layout_marginBottom="10dp"/>
+
+                        <TextView
+                            android:background="@android:color/transparent"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="@drawable/title_selector"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/item4_title"
+                            android:text="Chats"/>
+                        <TextView
+                            android:background="@android:color/transparent"
+                            android:textSize="7.45sp"
+                            android:lineHeight="9.94sp"
+                            android:fontFamily="@font/roboto_regular_400"
+                            android:textColor="@drawable/desc_selector"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/item4_desc"
+                            android:text="Search for available rider within your area"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 
 </FrameLayout>

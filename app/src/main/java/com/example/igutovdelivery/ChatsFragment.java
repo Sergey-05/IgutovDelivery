@@ -2,48 +2,45 @@ package com.example.igutovdelivery;
 
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-public class HomeFragment extends Fragment {
+public class ChatsFragment extends Fragment {
 
-    public HomeFragment() {
+    public ChatsFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_chats, container, false);
 
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
-        LinearLayout customer = v.findViewById(R.id.customerBtn);
+        ImageView back = v.findViewById(R.id.chats_back);
+        ConstraintLayout firstChat = v.findViewById(R.id.first_chats_layout);
 
-        LinearLayout wallet = v.findViewById(R.id.walletBtn);
-
-        LinearLayout chats = v.findViewById(R.id.chatsBtn);
-        chats.setOnClickListener(new View.OnClickListener() {
+        firstChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ChatsFragment fragment = new ChatsFragment();
-                ((MainActivity) requireActivity()).replaceFragment(fragment);
-            }
-        });
-
-        wallet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                WalletFragment fragment = new WalletFragment();
+                FirstChatFragment fragment = new FirstChatFragment();
                 ((MainActivity) requireActivity()).replaceFragment(fragment);
             }
         });
 
 
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HomeFragment fragment = new HomeFragment();
+                ((MainActivity) requireActivity()).replaceFragment(fragment);
+            }
+        });
 
         return v;
     }

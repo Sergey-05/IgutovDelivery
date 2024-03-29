@@ -27,6 +27,8 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="android:textColorSecondary">@color/gray_color_dark</item>
     </style>
+
+
     
 <!--    <style name="SwitchTheme" parent="Theme.AppCompat">-->
 
